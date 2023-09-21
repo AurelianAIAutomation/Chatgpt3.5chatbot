@@ -5,6 +5,15 @@ import { getTokens } from '$lib/tokenizer'
 import { json } from '@sveltejs/kit'
 import type { Config } from '@sveltejs/adapter-vercel'
 
+import { Configuration, OpenAIApi } from "openai";
+const configuration = new Configuration({
+    organization: "org-lwSGPHiQRWol738vGk0cLRM1",
+    apiKey: OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
+const response = await openai.listEngines();
+
+
 export const config: Config = {
 	runtime: 'edge'
 }
@@ -57,7 +66,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		}
 
 		const prompt =
-			'You are a virtual assistant for a company called Huntabyte. Your name is Axel Smith'
+			'You are a virtual assistant. Your name is GrumpyBot'
 		tokenCount += getTokens(prompt)
 
 		if (tokenCount >= 4000) {
