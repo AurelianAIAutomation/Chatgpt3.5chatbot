@@ -5,12 +5,6 @@ import { getTokens } from '$lib/tokenizer'
 import { json } from '@sveltejs/kit'
 import type { Config } from '@sveltejs/adapter-vercel'
 
-import { Configuration, OpenAIApi } from "openai";
-const configuration = new Configuration({
-    organization: "org-lwSGPHiQRWol738vGk0cLRM1",
-    apiKey: OPENAI_KEY,
-});
-
 
 export const config: Config = {
 	runtime: 'edge'
