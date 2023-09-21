@@ -8,7 +8,7 @@ import type { Config } from '@sveltejs/adapter-vercel'
 import { Configuration, OpenAIApi } from "openai";
 const configuration = new Configuration({
     organization: "org-lwSGPHiQRWol738vGk0cLRM1",
-    apiKey: OPENAI_API_KEY,
+    apiKey: OPENAI_KEY,
 });
 const openai = new OpenAIApi(configuration);
 const response = await openai.listEngines();
