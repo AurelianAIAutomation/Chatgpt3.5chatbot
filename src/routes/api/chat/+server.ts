@@ -10,8 +10,6 @@ const configuration = new Configuration({
     organization: "org-lwSGPHiQRWol738vGk0cLRM1",
     apiKey: OPENAI_KEY,
 });
-const openai = new OpenAIApi(configuration);
-const response = await openai.listEngines();
 
 
 export const config: Config = {
