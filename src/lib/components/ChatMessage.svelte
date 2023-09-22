@@ -1,21 +1,8 @@
 <script lang="ts">
-
-import type { ChatCompletionRequestMessageRoleEnum } from 'openai'
+	import type { ChatCompletionRequestMessageRoleEnum } from 'openai'
 	export let type: ChatCompletionRequestMessageRoleEnum
-
-const chatContainer = document.querySelector('.chat') as HTMLElement;
-const userInput = document.getElementById('user-input') as HTMLInputElement;
-const sendButton = document.getElementById('send-button') as HTMLButtonElement;
-
-// Function to add a message to the chat
-function addMessage(message: string, sender: string) {
-    const messageDiv = document.createElement('div');
-    messageDiv.classList.add('message', sender);
-    messageDiv.textContent = message;
-    chatContainer.appendChild(messageDiv);
-}
-
-<script>
+	export let message: string
+</script>
 
 <div class="chat {type === 'user' ? 'chat-end' : 'chat-start'} justify-end">
 	<div class="chat-image avatar">
