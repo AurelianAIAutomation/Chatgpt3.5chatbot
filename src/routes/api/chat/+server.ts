@@ -53,6 +53,15 @@ export const POST: RequestHandler = async ({ request }) => {
 		const moderationData = await moderationRes.json()
 		const [results] = moderationData.results
 
+		const result = "Your text goes here"; // Replace with your actual result
+                
+		const preFormattedResult = `<pre>${result}</pre>`;
+                const brFormattedResult = result.replace(/\n/g, '<br>');
+
+                console.log(preFormattedResult); // Outputs the result in a <pre> element
+                console.log(brFormattedResult);  // Outputs the result with <br> tags for line breaks
+
+
 		if (results.flagged) {
 			throw new Error('Query flagged by openai')
 		}
