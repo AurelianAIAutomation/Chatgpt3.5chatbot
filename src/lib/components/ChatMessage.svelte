@@ -1,5 +1,8 @@
 <script lang="ts">
 
+import type { ChatCompletionRequestMessageRoleEnum } from 'openai'
+	export let type: ChatCompletionRequestMessageRoleEnum
+
 const chatContainer = document.querySelector('.chat') as HTMLElement;
 const userInput = document.getElementById('user-input') as HTMLInputElement;
 const sendButton = document.getElementById('send-button') as HTMLButtonElement;
@@ -12,31 +15,21 @@ function addMessage(message: string, sender: string) {
     chatContainer.appendChild(messageDiv);
 }
 
-// Simulate a response from ChatGPT
-function simulateChatGPTResponse(userInput: string): string {
-    // In a real application, you would send the user input to a server for processing.
-    // Here, we simulate a simple response.
-    const response = `You said: "${userInput}" - ChatGPT's response.`;
-    return response;
-}
+<script>
 
-// Event listener for sending messages
-sendButton.addEventListener('click', () => {
-    const userMessage = userInput.value;
-    if (userMessage) {
-        // Add the user's message to the chat
-        addMessage(userMessage, 'user');
-        
-        // Simulate a ChatGPT response
-        const chatGPTResponse = simulateChatGPTResponse(userMessage);
-
-        // Add the ChatGPT response to the chat
-        addMessage(chatGPTResponse, 'chatgpt');
-
-        // Clear the user input
-        userInput.value = '';
-    }
-});
-
-// Initial system message
-addMessage("Welcome to ChatGPT-like Page!", 'system');
+<div class="chat {type === 'user' ? 'chat-end' : 'chat-start'} justify-end">
+	<div class="chat-image avatar">
+		<div class="w-10 rounded-full">
+			<img
+				src="https://ui-avatars.com/api/?name={type === 'user' ? 'Me' : 'B'}"
+				alt="{type} avatar"
+			/>
+		</div>
+	</div>
+	<div class="chat-header">
+		{type === 'user' ? 'Me' : 'Bot'}
+	</div>
+	<div class="chat-bubble {type === 'user' ? 'chat-bubble-primary' : 'chat-bubble-secondary'}">
+		{message}
+	</div>
+</div>
