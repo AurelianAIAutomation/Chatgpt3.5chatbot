@@ -52,7 +52,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 		const moderationData = await moderationRes.json()
 		const [results] = moderationData.result
-		const [results] = results.replace(/\n/g, '<br>')
+	
 
 
 
