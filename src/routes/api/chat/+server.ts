@@ -51,12 +51,9 @@ export const POST: RequestHandler = async ({ request }) => {
 		}
 
 		const moderationData = await moderationRes.json()
-		const [results] = moderationData.results
-                
-		const preFormattedResult = `<pre>${result}</pre>`;
-                const brFormattedResult = result.replace(/\n/g, '<br>');
+		const [results] = moderationData.result
+		const [results] = results.replace(/\n/g, '<br>')
 
-                const results = brFormattedResult
 
 
 		if (results.flagged) {
