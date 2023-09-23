@@ -5,7 +5,6 @@ import { getTokens } from '$lib/tokenizer'
 import { json } from '@sveltejs/kit'
 import type { Config } from '@sveltejs/adapter-vercel'
 
-
 export const config: Config = {
 	runtime: 'edge'
 }
@@ -51,17 +50,14 @@ export const POST: RequestHandler = async ({ request }) => {
 		}
 
 		const moderationData = await moderationRes.json()
-		const [results] = moderationData.result
-	
-
-
+		const [results] = moderationData.results
 
 		if (results.flagged) {
 			throw new Error('Query flagged by openai')
 		}
 
 		const prompt =
-			'You are a virtual assistant. Your name is GrumpyBot'
+			'You are a virtual assistant for a company called Huntabyte. Your name is Axel Smith'
 		tokenCount += getTokens(prompt)
 
 		if (tokenCount >= 4000) {
