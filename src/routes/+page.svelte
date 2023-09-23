@@ -62,7 +62,11 @@
 	}
 </script>
 
-</div>
+<div class="flex flex-col pt-4 w-full px-8 items-center gap-2">
+	<div>
+		<h1 class="text-2xl font-bold w-full text-center">EvanBot</h1>
+		<p class="text-sm italic">Powered by gpt-3.5-turbo</p>
+	</div>
 
 	<div class="h-[600px] w-full bg-gray-900 rounded-md p-2 overflow-y-auto flex flex-col gap-4">
 		<div class="flex flex-col gap-2">
