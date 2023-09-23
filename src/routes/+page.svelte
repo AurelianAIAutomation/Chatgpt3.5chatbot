@@ -62,6 +62,7 @@
 	}
 </script>
 
+</div>
 
 	<div class="h-[600px] w-full bg-gray-900 rounded-md p-2 overflow-y-auto flex flex-col gap-4">
 		<div class="flex flex-col gap-2">
