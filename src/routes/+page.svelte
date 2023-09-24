@@ -34,7 +34,7 @@
 			scrollToBottom()
 			try {
 				loading = false
-				console.print(e.data)
+				console.log(e.data)
 				if (e.data === '[DONE]') {
 					chatMessages = [...chatMessages, { role: 'assistant', content: answer }]
 					answer = ''
