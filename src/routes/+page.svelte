@@ -41,7 +41,7 @@
 					return
 				}
 
-				const completionResponse = JSON.parse(e.data.replace(".\n","<br>").replace(":\n",","<br>"))
+				const completionResponse = JSON.parse(e.data.replace(".\n","<br>"))
 				const [{ delta }] = completionResponse.choices
 
 				if (delta.content) {
